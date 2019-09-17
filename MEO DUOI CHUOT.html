@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Rat(namerat, weightrat, speed, status, behaviorrat) {
+        this.namerat = namerat;
+        this.weightrat = weightrat;
+        this.speed = speed;
+        this.status = status;
+        this.behaviorrat = behaviorrat;
+        this.getWeightRat = function () {
+            return this.weightrat;
+        };
+
+        this.getSpeed = function () {
+            return this.speed
+        };
+        this.getRat = function () {
+            return alert("Chuột: " + this.namerat + ", Khối lượng: " + this.getWeightRat() + ", Tốc độ: " + this.speed + ", Trạng thái: " +
+                this.status + ",  " + this.behaviorrat);
+        };
+    }
+
+    function Cat(namecat, masscat, maxspeed, behaviorcat) {
+        this.namecat = namecat;
+        this.weightcat = masscat;
+        this.maxspeed = maxspeed;
+        this.behaviorcat = behaviorcat;
+        this.getMaxspeed = function () {
+            return this.maxspeed;
+        };
+        this.getCat = function () {
+            return "Mèo: " + this.namecat + ", Khối lượng: " + this.weightcat + ", Tốc độ tối đa: " + this.maxspeed + ", " + this.behaviorcat;
+        };
+        this.batchuot= function (rat) {
+            if(this.maxspeed > rat.speed){
+                return rat.status = false;
+            }else {
+                return rat.status=true;}
+        };
+        this.thitchuot = function (rat) {
+            if (rat.status==false){
+                return this.weightcat = rat.getWeightRat() + this.weightcat;
+            }else {
+                return this.weightcat;}
+        };
+    }
+    let rat1 = new Rat("Jerry",5,10,true,"chit chit");
+    let rat2 = new Rat("Jerry2",4,20,true,"chit chit");
+    let cat = new Cat("Tom",10,15,"Meo Meo");
+
+</script>
+</body>
+</html>
